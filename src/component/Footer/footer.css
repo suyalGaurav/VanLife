@@ -1,0 +1,16 @@
+.footer {
+    height: 75px;
+    display: flex;
+    padding: 25px 106px 25px 106px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+}
+
+.footer > p {
+    color: #AAA;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+}

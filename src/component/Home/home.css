@@ -1,0 +1,58 @@
+.home {
+    min-height: calc(100vh - 111px - 75px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Inter;
+   background:  linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), 
+   url('../../assets/home_background.png'), 
+   lightgray 0px -65px;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.main-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 65px 27px;
+    gap: 25px;
+}
+
+.home-heading {
+    color: #FFF;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 42px; 
+}
+
+.home-heading-2 {
+    color: #FFF;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 25px;
+}
+
+.home-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    background: #FF8C38;   
+    width: 100%; 
+    height: 50px;
+}
+
+.home-button button {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 31.5px; 
+    border: none;
+    color: #FFF;
+    background: #FF8C38;   
+
+}

@@ -1,0 +1,36 @@
+
+.header {
+    display: inline-flex;
+    padding: 35px 26px 35px 26px;
+    justify-content: space-between;
+    align-items: center;
+    height: 111px;
+    background-color:#FFF7ED;
+    background-color:grey;
+    width: 100%;
+    font-family: Inter;
+}
+
+.header > a {
+    text-decoration: none;
+}
+
+.header > a > h1 {
+    font-size: 25px;
+    font-weight: 900;
+    color: black;
+}
+
+.header > nav {
+    display: inline-flex;
+}
+
+.header > nav > a {
+    text-decoration: none;
+    width: 52px;
+    height: 23px;
+    color: #4D4D4D;
+    text-align: right;
+    font-weight: 600;
+    line-height: 22.923px;
+}
