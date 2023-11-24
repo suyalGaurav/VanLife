@@ -1,4 +1,136 @@
-.vans {
-    color: red;
+.vans-section {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+    font-family: 'Inter';
+    background: #FFF7ED;
     min-height: calc(100vh - 111px - 75px);
 }
+
+.vans-section > h2 {
+    color: #161616;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.input-div {
+    position: relative;
+    display: flex;
+}
+
+.input-div > label {
+    font-weight: 500;
+    line-height: 24px; 
+    color: #4D4D4D;
+    cursor: pointer;
+    background: #FFEAD0;
+    padding: 6px 26px 7px 26px;
+    border-radius: 5px;
+}
+
+.input-div > input, .clear-filter > input  {
+    position: absolute;
+    left: 50%;
+    visibility: hidden;
+}
+
+.clear-filter {
+    position: relative;
+    text-decoration: underline;
+}
+
+.clear-filter > label {
+    cursor: pointer;
+}
+
+.vans {
+    margin: 42px 0px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.van {
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 230px;
+    gap: 12px;
+}
+
+/* .van-image {
+    height: 230px;
+    width: 230px;
+} */
+
+.van-name-and-price {
+    display: flex;
+    justify-content: space-between;
+    color: #161616;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.van-name, .van-price {
+    font-weight: 600;
+}
+
+.van-price {
+    position: relative;
+}
+
+.van-price::after {
+    font-size: 14px;
+    font-weight: normal;
+    content: "/day";
+    position: absolute;
+    bottom: -11px;
+    left: 10px;
+}
+
+.van-type {
+    width: 86px;
+    height: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #E17654;
+}
+
+.van-type > p {
+    color: #FFEAD0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.simple {
+    background-color: orange;
+}
+
+.rugged {
+    background-color: green;
+}
+
+.luxury {
+    background-color: black;
+}
+
+/* img {
+    width: 90px;
+    height: 90px;
+} */
