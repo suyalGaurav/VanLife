@@ -1,0 +1,201 @@
+
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-welcome {
+    height: 219px;
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+    background: #FFEAD0;
+    padding: 37px 26px;
+}
+
+.dashboard-welcome .welcome-msg {
+    color: #161616;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 22px; 
+}
+
+.dashboard-welcome .income-detail {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: #4D4D4D;
+}
+
+.dashboard-welcome .income-detail > p {
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.dashboard-welcome .income-detail > p > span {
+    font-weight: 700;
+    line-height: 22px;
+    text-decoration-line: underline;
+}
+
+.dashboard-welcome .income-detail p:nth-of-type(2) {
+    color: #161616;
+    text-align: right;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.dashboard-welcome .total-income {
+    color: #161616;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 38px; 
+}
+
+.dashboard-welcome .star-image {
+    line-height: -20px;
+}
+
+.dashboard-review {
+    height: 113px;
+    border-radius: 5px;
+    background: #FFDDB2;
+    padding: 45px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-and-rating {
+    display: flex;
+    justify-content: space-between;
+    gap: 38px;
+}
+
+.review-and-rating > h3 {
+    color: #161616;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.review-and-rating .user-rated-no {
+    color: #161616;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.review-and-rating .star-image-span {
+    height: 24px;
+}
+
+.review-and-rating .rating {
+    display: flex;
+    line-height: 29px;
+    position: relative;
+}
+
+.star-image-span {
+    line-height: 1.5;   
+    position: absolute;
+    top: 10%;
+    left: -26px;
+}
+
+.review-and-rating img {
+    width: 26px;
+    height: 24px;
+}
+
+.review-and-rating > p > .total-rating {
+    color: #4D4D4D;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.dashboard-review .review-detail {
+    color: #161616;
+}
+
+.listed-vans {
+    padding: 38px 26px;
+}
+
+.listed-vans-view {
+    display: flex;
+    justify-content: space-between;
+}
+
+.listed-vans-view h5 {
+    color: #161616;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.listed-vans-view button {
+    border: none;
+    background-color: white;
+    color: #161616;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+
+.dashboard-host-vans-section {
+    display: flex;
+    flex-direction: column;
+    padding: 26px 37px;
+    background: #FFF7ED;
+    gap: 30px;
+}
+
+.dashboard-host-vans-section img {
+    width: 66px;
+    height: 66px;
+    flex-shrink: 0;
+}
+
+.dashboard-host-vans-listed-vans {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard-host-vans-listed-vans h1 {
+    color: #161616;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 22px; 
+}
+
+.dashboard-host-vans-list {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.dashboard-host-van {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    background: #FFF;
+    border-radius: 6px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.dashboard-host-van-image-and-detail {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.dashboard-host-van-detail h1 {
+    color: #161616;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 31.6px;
+}

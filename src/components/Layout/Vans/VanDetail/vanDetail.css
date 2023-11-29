@@ -1,4 +1,4 @@
-.van-detail-section {
+.van-detail-section, .van-detail-loading-section {
     background: #FFF7ED;
     min-height: calc(100vh - 111px - 75px);
     padding: 20px;

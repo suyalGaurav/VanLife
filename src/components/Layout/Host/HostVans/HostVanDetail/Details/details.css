@@ -1,0 +1,25 @@
+
+.host-van-detail {
+    margin-top: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background: #FFF;
+    gap: 15px;
+}
+
+.host-van-detail > p:nth-of-type(3) {
+    max-width: 443.5px;
+}
+
+.host-van-detail > p {
+    color: #161616;
+    font-size: 14.36px;
+    font-weight: 500;
+    line-height: 21.45px;
+}
+
+.host-van-detail > p > span {
+    font-weight: 700;
+}

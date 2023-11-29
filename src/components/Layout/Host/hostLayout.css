@@ -1,0 +1,45 @@
+.host-nav {
+    width: 100vw;
+    background: #FFF7ED;
+}
+
+.host-nav-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    gap: 20px;
+    padding: 37px 10px 42px 26px;
+    flex-wrap: wrap;
+}
+
+.host-nav-main a {
+    color: #4D4D4D;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23px; 
+    transition: all 200ms;
+
+}
+
+.host-nav-main a:hover, .host-nav-main {
+    color: #161616;
+}
+
+.host-outlet {
+    min-height: calc(100vh - 111px - 75px - 102px);
+    background: #FFF7ED;
+}
+
+/* .host-nav-link-active {
+    text-decoration-color: #161616;
+    text-decoration: underline;
+} */
+
+@media screen and (max-width: 575px) {
+    .host-nav-main {
+        width: 100%;
+    }
+}
+

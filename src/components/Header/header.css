@@ -1,0 +1,44 @@
+
+.header {
+    display: flex;
+    padding: 35px 26px 35px 26px;
+    justify-content: space-between;
+    align-items: center;
+    height: 111px;
+    background-color: #FFF7ED;
+    width: 100%;
+    font-family: Inter;
+}
+
+.header > nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.header > a > h1 {
+    font-size: 25px;
+    font-weight: 900;
+    color: #161616;
+}
+
+ nav > a {
+    width: 52px;
+    color: #4D4D4D;
+    text-align: center;
+    font-weight: 600;
+    line-height: 22.923px;
+}
+
+.header > a, nav a {
+    text-decoration: none;
+    text-decoration-color: transparent;
+    transition: all 0.2s ease-in;
+}
+
+.header > a:hover, nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: #161616;;
+    color: #161616;;
+}

@@ -1,0 +1,56 @@
+
+.host-vans-section {
+    display: flex;
+    flex-direction: column;
+    padding: 26px 37px;
+    background: #FFF7ED;
+    gap: 30px;
+}
+
+.host-vans-section img {
+    width: 66px;
+    height: 66px;
+    flex-shrink: 0;
+}
+
+.host-vans-listed-vans {
+    display: flex;
+    justify-content: space-between;
+}
+
+.host-vans-section h1 {
+    color: #161616;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 33.6px;
+}
+
+.host-vans-list {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.host-van {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    background: #FFF;
+    border-radius: 6px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.host-van-image-and-detail {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.host-van-detail h1 {
+    color: #161616;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 31.6px;
+}

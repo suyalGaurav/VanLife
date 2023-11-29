@@ -5,3 +5,8 @@
     /* background-color: grey; */
 }
 
+.nav-link-active {
+    text-decoration-color: #161616;
+    color: #161616;
+    text-decoration: underline;
+}
