@@ -5,7 +5,7 @@
     justify-content: center;
     font-family: Inter;
    background:  linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), 
-   url('home_background.png')
+   url('../../../assets/home_background.png')
    lightgray 0px -65px;
    background-repeat: no-repeat;
    background-size: cover;
