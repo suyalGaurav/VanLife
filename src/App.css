@@ -10,3 +10,12 @@
     color: #161616;
     text-decoration: underline;
 }
+
+.layout-outlet {
+    min-height: calc(100vh - 111px - 75px);
+}
+
+.loading {
+    padding: 20px;
+    font-weight: 700;
+}

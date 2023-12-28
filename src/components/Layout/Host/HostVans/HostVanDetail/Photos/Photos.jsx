@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react"
 import "./photos.css"
 import { useOutletContext } from "react-router-dom"
 

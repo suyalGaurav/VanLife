@@ -23,25 +23,49 @@
     gap: 15px;
 }
 
-.input-div {
+.button-div {
     position: relative;
     display: flex;
 }
 
-.input-div > label {
+.button-div {
     font-weight: 500;
     line-height: 24px; 
     color: #4D4D4D;
     cursor: pointer;
-    background: #FFEAD0;
     padding: 6px 26px 7px 26px;
+    background-color: #FFEAD0;
     border-radius: 5px;
 }
 
-.input-div > input, .clear-filter > input  {
+.button-div, .clear-filter {
+    transition: all 200ms;
+}
+
+.button-div:hover, .selected-btn {
+    color: #FFEAD0;
+}
+
+.button-div > button, .clear-filter > button  {
     position: absolute;
     left: 50%;
     visibility: hidden;
+}
+
+.simple-btn:hover, .simple-btn.selected-btn {
+    background-color: #E17654;
+}
+
+.rugged-btn:hover, .rugged-btn.selected-btn {
+    background-color: #115E59;
+}
+
+.luxury-btn:hover, .luxury-btn.selected-btn {
+    background-color: black;
+}
+
+.clear-filter:hover {
+    font-weight: 700;
 }
 
 .clear-filter {
@@ -62,7 +86,7 @@
     gap: 25px;
 }
 
-.van {
+.van > a {
     color: black;
     display: flex;
     justify-content: center;
@@ -70,11 +94,6 @@
     width: 230px;
     gap: 12px;
 }
-
-/* .van-image {
-    height: 230px;
-    width: 230px;
-} */
 
 .van-name-and-price {
     display: flex;
@@ -109,7 +128,6 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background: #E17654;
 }
 
 .van-type > p {
@@ -119,18 +137,14 @@
 }
 
 .simple {
-    background-color: orange;
+    background: #E17654;
 }
 
 .rugged {
-    background-color: green;
+    background-color: #115E59;
 }
 
 .luxury {
     background-color: black;
 }
 
-/* img {
-    width: 90px;
-    height: 90px;
-} */

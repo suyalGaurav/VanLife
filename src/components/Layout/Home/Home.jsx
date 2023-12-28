@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 
 function Home() {
-
     return (
       <>
         <div className="home">
@@ -15,7 +14,7 @@ function Home() {
             <p className="home-heading-2">Add adventure to your life by joining the #vanlife
               movement. Rent the perfect van to make your perfect road trip.
             </p>
-            <Link to="/vans" className='home-button'>
+            <Link to="vans" className='home-button'>
               <button>
                 Find your van
               </button>

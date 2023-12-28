@@ -1,4 +1,3 @@
-import React from "react"
 import "./details.css"
 import { useOutletContext } from "react-router-dom"
 
@@ -21,7 +20,7 @@ export default function Details() {
             </p>
             <p>
                 <span>Visibility: </span>
-                Public
+                {vanDetails.visibility}
             </p>
         </div>
     )

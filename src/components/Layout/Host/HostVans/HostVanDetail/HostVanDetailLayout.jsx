@@ -1,12 +1,19 @@
 
-import React, {useState, useEffect} from "react"
-import {Link, NavLink, Outlet, useParams} from "react-router-dom"
-
+import React from "react"
+import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom"
+import { getVansById } from "../../../../../api"
+import { requireAuth } from "../../../../../utils"
 import "./hostVanDetailLayout.css"
 
+
+export async function loader({ params }) {
+    await requireAuth()
+    const { id } = params
+    return getVansById(id)
+}
+
 export default function HostVanDetailLayout() {
-    const [vanDetails, setVanDetails] = useState({})
-    const {id} = useParams();
+    const vanDetails = useLoaderData()
 
     const activeStyles = {
         fontWeight: "bold",
@@ -14,30 +21,10 @@ export default function HostVanDetailLayout() {
         color: "#161616"
     }
 
-    useEffect(()=> {
-        fetch(`/api/host/vans/${id}`)
-        .then((res) => res.json())
-        .then((data) => {
-            if(data?.vans?.[0]) {
-                setVanDetails(data.vans[0])    
-            } else {
-                console.log("Data doesn't exist")
-            }
-        })
-        .catch((error)=> {
-            console.log("Error getting data ", error);
-        })
-    }, [id])
-
-    // useEffect(() => {
-    //     console.log(vanDetails);
-    // }, [vanDetails])
-    
-
     return (
         <section className="host-van-detail-layout">
             <div className="host-van-detail-back-link">
-                <span>{"<- "}</span>
+                <span>&larr; </span>
                 <Link to=".."
                     relative="path" > 
                     <span className="host-van-detail-back">

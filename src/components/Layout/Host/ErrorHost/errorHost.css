@@ -1,17 +1,17 @@
-.error-section {
+.error-host {
     text-align: center;
-    padding: 90px 20px;
+    padding: 50px 20px;
     border-radius: 5px;
-    min-height: 100vh;
-    background: #FFF;
+    min-height: calc(100vh - 111px - 75px - 102px);
+    background: #FFF7ED;
 }
 
-.error-section > h1 {
+.error-host > h1 {
     font-size: 30px;
     font-weight: 700;
 }
 
-.error-section > p {
+.error-host > p {
     font-size: 18px;
     font-weight: 500;
     margin: 10px 0;

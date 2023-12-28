@@ -7,7 +7,9 @@ export default function Layout() {
     return (
         <>
             <Header />
-            <Outlet /> {/*The Outlet component serves as a placeholder where child routes can be rendered.*/}
+            <section className="layout-outlet">
+                <Outlet /> {/*The Outlet component serves as a placeholder where child routes can be rendered.*/}
+            </section>
             <Footer />
         </>
     )

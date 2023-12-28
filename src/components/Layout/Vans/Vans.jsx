@@ -1,94 +1,87 @@
-import { Link } from 'react-router-dom'
+
+import { Link, useLoaderData, useSearchParams } from 'react-router-dom'
+import { getVans } from "../../../api"
 import './vans.css'
-import { useEffect, useState } from 'react'
 
-function Vans() {
-    const [vans, setVans] = useState([])
-    const [filter, setFilter] = useState("all")
+export function loader() {
+  return getVans()
+}
 
-    useEffect(()=>{
-      fetch("/api/vans")
-      .then((res)=> res.json())
-      .then((data) => {
-        data.vans ? setVans(data.vans) :  console.log("vans data doesn't exist")
-      })
-      .catch((error) => {
-        console.error("Error fetching vans data:", error);
-      });
-  
-    }, [])
+export default function Vans() {
+    const vans = useLoaderData()
+    const [searchParams, setSearchParams] = useSearchParams()
+    let typeFilter= searchParams?.get('type')
 
-    function filterVans(event) {
-      const {id} = event.target
-      setFilter(id)
-    }
+    //In case filter is null- get all vans, else- get van by type == filter
+    const filteredVans = (typeFilter === null)
+      ? vans 
+      : vans.filter(van => van.type === typeFilter)
 
-    // function getVan({id, name, type, price, imageUrl}) {
-    //   return (
-    //       <div className="van" key={id}>
-    //         <p>{name}</p>
-    //         <p>{type}</p>
-    //         <p>{price}</p>
-    //         <img src={imageUrl} alt="van-image" />
-    //       </div>
-    //     )
-    // }
-
-    // const allVans = 
-    //   vans.map((van) => {
-    //         if(filter !== "all") {
-    //           return filter === van.type && getVan(van)
-    //         }
-    //         return getVan(van) //When filter = all
-    //   })
-
-    //More readable way to write the above code
-    const allVans = vans
-      .filter((van) => (filter === "all" ? true : filter === van.type)) //In case filter is all- get all vans, else- get van where their type == filter
-      .map((van) => (
-        <Link to={`/vans/${van.id}`}  key={van.id}>
-          <div className="van">
+    const allVanElements = filteredVans.map((van) => (
+      <div className="van" key={van.id}>
+        <Link 
+          to={van.id}
+          state={{ 
+            search: `?${searchParams.toString()}`,
+            type: typeFilter
+          }}
+        >
             <img className="van-image" src={van.imageUrl} alt="van-image" />
             <div className="van-name-and-price">
               <p className='van-name'>{van.name}</p>
               <p className='van-price'>${van.price}</p>
             </div>
-            <div className={`${van.type} van-type`}>
+            <div className={`van-type ${van.type}`}>
               <p>{van.type?.[0].toUpperCase() + van.type?.slice(1)}</p>
             </div>
-          </div>
-        </Link>
+          </Link>
+      </div>
       ))
+
+    function handleFilterChange(key, value) {
+      setSearchParams(prevParams => {
+        if(value === null) {
+          prevParams.delete(key)
+        } else {
+          prevParams.set(key, value)
+        }
+        return prevParams
+      })
+    }
 
     return (
         <section className="vans-section">
+
             <h2>Explore our van options</h2>
+
             <div className="filters">
-              <div className="input-div">
+              <div className={`button-div simple-btn ${typeFilter === "simple" ? "selected-btn" : null}`}>
                 <label htmlFor="simple">Simple</label>
-                <input name="filters" type="radio" id="simple" checked={filter === "simple"} onChange={filterVans} />
+                <button type="button" id="simple" onClick={() => handleFilterChange("type", "simple")} />
               </div>
 
-              <div className=" input-div">
+              <div className={`button-div rugged-btn ${typeFilter === "rugged" ? "selected-btn" : null}`}>
                 <label htmlFor="rugged">Rugged</label>
-                <input name="filters" type="radio" id="rugged" checked={filter === "rugged"} onChange={filterVans}/>
+                <button type="button" id="rugged" onClick={() => handleFilterChange("type", "rugged")}/>
               </div>
 
-              <div className="input-div">
+              <div className={`button-div luxury-btn ${typeFilter === "luxury" ? "selected-btn" : null}`}>
                 <label htmlFor="luxury">Luxury</label>
-                <input name="filters" type="radio" id="luxury" checked={filter === "luxury"} onChange={filterVans}/>
+                <button type="button" id="luxury" onClick={() => handleFilterChange("type", "luxury")}/>
               </div>
               
-              <div className="clear-filter">
-                <label htmlFor="all">Clear Filters</label>
-                <input name="filters" type="radio" id="all" checked={filter === "all"} onChange={filterVans}/>
-              </div>
+              { typeFilter !== null && 
+                <div className={`clear-filter`}>
+                  <label htmlFor="all">Clear Filters</label>
+                  <button type="button" id="all" onClick={() => handleFilterChange("type", null)}/>
+                </div> 
+              }
             </div>
+
             <div className="vans">
-              {allVans}
+              {allVanElements}
             </div>
+
         </section>   
     )
 }
-
-export default Vans

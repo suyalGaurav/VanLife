@@ -1,54 +1,30 @@
-import { useEffect, useState } from 'react'
 import './vanDetail.css'
-import { useParams, Link, useNavigate  } from 'react-router-dom'
+import { Link, useLocation, useLoaderData  } from 'react-router-dom'
+import { getVansById } from '../../../../api'
+
+export function loader({ params }) {
+    const id = params.id
+    return getVansById(id)
+}
 
 function Van() {
-    const [van, setVan] = useState({})
-    const [loading, setLoading] = useState(true)
-    const { id } = useParams();
-    const navigate = useNavigate();
+    const van = useLoaderData();
 
-    useEffect(()=> {
-        fetch(`/api/vans/${id}`)
-        .then(res=> res.json())
-        .then(vanData=> {
-           if(vanData?.vans) {
-            setVan(vanData.vans)
-            setLoading(false)
-           } else {
-            console.log("Errro: Van data doesn't exist")
-            setLoading(false)
-           }
-        })
-        .catch(error=>{
-            console.log("Error: Getting van by id", error)
-            setLoading(false)
-        })
-    }, [id])
-
-    useEffect(()=> {
-        console.log(van)
-    }, [van])
-
-    if(loading) {
-        return (
-            <section className='van-detail-loading-section'>
-                <h1>Loading...</h1>
-            </section>
-        )
-    } else if(!van || !van?.id) {
-        navigate("/error")
-    }
+    const location = useLocation();
+    const search = location["state"]?.["search"] || ""
+    const vanType = location["state"]?.["type"] || "all"
 
     return (
         <section className='van-detail-section'>
-            <Link to="/vans" className='back-to-all-vans-link'> {"<-"} Back to all vans</Link>
+            <Link to={`..${search}`} relative='path' className='back-to-all-vans-link'>
+                &larr; { `Back to ${ vanType } vans` } 
+            </Link>
             <div className="van-detail">
                 <div className='van-detail-img-div'>
                     <img className="van-detail-img" src={van?.imageUrl} alt='van-image'/>
                 </div>
                 <div className="van-detail-all-description">
-                    <div className='van-detail-type'>
+                    <div className={`van-detail-type ${van.type}`}>
                         <p>{van.type?.[0].toUpperCase() + van.type?.slice(1)}</p>
                     </div>
                     <p className='van-detail-name'>{van?.name}</p>

@@ -1,13 +1,12 @@
 
-import { useRouteError } from 'react-router-dom'
-import './error.css'
+import { useRouteError } from "react-router-dom"
+import './errorHost.css'
 
-
-export default function Error() {
+export default function ErrorHost() {
     const error = useRouteError()
 
     return (
-        <section className="error-section">
+        <section className="error-host">
             <h1>Oops!</h1>
             <p>Sorry, an unexpected error has occurred.</p>
             { error?.message && 
